@@ -27,7 +27,7 @@
 // * Person receives `speak` as a method.
 // * This method logs out a phrase `Hello my name is Fred, I am from Bedrock` where `name` and `location` are the object's own props
 
-class Person {
+class Personn {
   constructor(personDetails) {
     (this.name = personDetails.name),
       (this.age = personDetails.age),
@@ -51,7 +51,7 @@ class Person {
 //   * `demo` receives a `subject` string as an argument and logs out the phrase 'Today we are learning about {subject}' where subject is the param passed in.
 //   * `grade` receives a `student` object and a `subject` string as arguments and logs out '{student.name} receives a perfect score on {subject}'
 
-class Instructor extends Person {
+class Instructor extends Personn {
   constructor(personDetails) {
     super(personDetails);
     (this.speciality = personDetails.speciality),
@@ -82,7 +82,7 @@ class Instructor extends Person {
 //   * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}`
 
 
-class Student extends Person {
+class Student extends Personn {
     constructor(personDetails){
         super(personDetails)
         this.previousBackground = personDetails.previousBackground,
@@ -97,18 +97,22 @@ class Student extends Person {
 
             PRAssignmentt (subject){
 
-                return console.log(`${student.name} has submitted a PR for ${subject}`)
+                return console.log(`${this.name} has submitted a PR for ${subject}`)
 
 
             }
 
             sprintChallenge(subject){
-                return console.log(`${student.name} has begun sprint challenge on ${subject}`)
+                return console.log(`${this.name} has begun sprint challenge on ${subject}`)
             }
 }
 
+const studentn1 = new Student ({
 
+    name: "jack"
+})
 
+console.log(studentn1.PRAssignmentt("Javascript"));
 
 // #### Project Manager
 
@@ -133,13 +137,13 @@ class ProjectManagers extends Instructor {
 
     standUp(channel){
 
-        return console.log(`${name} announces to ${channel},@channel standy times !`)
+        return console.log(`${this.name} announces to ${channel},@channel standy times !`)
 
     }
 
     debugsCode(student,subject){
 
-        return console.log(`${name} debugs ${student.name} code on ${subject}`)
+        return console.log(`${this.name} debugs ${student.name}'s code on ${subject}`)
 
     }
 }
@@ -157,4 +161,5 @@ const projectMan = new ProjectManagers ({
     favInstructor:"John"
 })
 
-console.log(projectMan.standUp)
+console.log(projectMan.standUp("webeu3"))
+console.log(projectMan.debugsCode({name: "Abdel"},"equations"))
