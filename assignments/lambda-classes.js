@@ -81,37 +81,31 @@ class Instructor extends Personn {
 //   * `PRAssignment` a method that receives a subject as an argument and logs out that the `student.name has submitted a PR for {subject}`
 //   * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}`
 
-
 class Student extends Personn {
-    constructor(personDetails){
-        super(personDetails)
-        this.previousBackground = personDetails.previousBackground,
-        this.classname = personDetails.classname,
-        this.favSubjects = personDetails.favSubjects,
-        this.grade = 99
-    }
+  constructor(personDetails) {
+    super(personDetails);
+    (this.previousBackground = personDetails.previousBackground),
+      (this.classname = personDetails.classname),
+      (this.favSubjects = personDetails.favSubjects),
+      (this.grade = 99);
+  }
 
-            listsSubjects(){
+  listsSubjects() {
+    return console.log(this.favSubjects);
+  }
 
-                return console.log(this.favSubjects)
-            }
+  PRAssignmentt(subject) {
+    return console.log(`${this.name} has submitted a PR for ${subject}`);
+  }
 
-            PRAssignmentt (subject){
-
-                return console.log(`${this.name} has submitted a PR for ${subject}`)
-
-
-            }
-
-            sprintChallenge(subject){
-                return console.log(`${this.name} has begun sprint challenge on ${subject}`)
-            }
+  sprintChallenge(subject) {
+    return console.log(`${this.name} has begun sprint challenge on ${subject}`);
+  }
 }
 
-const studentn1 = new Student ({
-
-    name: "jack"
-})
+const studentn1 = new Student({
+  name: "jack"
+});
 
 console.log(studentn1.PRAssignmentt("Python"));
 
@@ -126,48 +120,39 @@ console.log(studentn1.PRAssignmentt("Python"));
 //   * `standUp` a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
 //   * `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
 
-
-
 class ProjectManagers extends Instructor {
-    constructor(personalD){
-        super(personalD)
-        this.gradClassName = personalD.gradClassName,
-        this.favInstructor = personalD.favInstructor
+  constructor(personalD) {
+    super(personalD);
+    (this.gradClassName = personalD.gradClassName),
+      (this.favInstructor = personalD.favInstructor);
+  }
 
-    }
+  standUp(channel) {
+    return console.log(
+      `${this.name} announces to ${channel},@channel standy times !`
+    );
+  }
 
-    standUp(channel){
-
-        return console.log(`${this.name} announces to ${channel},@channel standy times !`)
-
-    }
-
-    debugsCode(student,subject){
-
-        return console.log(`${this.name} debugs ${student.name}'s code on ${subject}`)
-
-    }
+  debugsCode(student, subject) {
+    return console.log(
+      `${this.name} debugs ${student.name}'s code on ${subject}`
+    );
+  }
 }
 
+const projectMan = new ProjectManagers({
+  name: "Carl",
+  age: "22",
+  location: "Asia",
+  speciality: "math",
+  favLanguage: "Russian",
+  catchPhrase: "Whats cracking",
+  gradClassName: "EDSFSF12",
+  favInstructor: "John"
+});
 
-const projectMan = new ProjectManagers ({
-
-    name: "Carl",
-    age: "22",
-    location: "Asia",
-    speciality: "math",
-    favLanguage:"Russian",
-    catchPhrase:"Whats cracking",
-    gradClassName:"EDSFSF12",
-    favInstructor:"John"
-})
-
-console.log(projectMan.standUp("webeu4"))
-console.log(projectMan.debugsCode({name: "Abdel"},"equations"))
-
-
-
-
+console.log(projectMan.standUp("webeu4"));
+console.log(projectMan.debugsCode({ name: "Abdel" }, "equations"));
 
 // * Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
 // * Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
