@@ -66,7 +66,25 @@ class Instructor extends Personn {
   grade(student, subject) {
     return ` ${student.name} receives a perfect score on ${subject}`;
   }
+
+  correctTests(grade){
+      const studentGrade = Math.floor(Math.random()*grade+1)
+      return `Student grade is ${studentGrade}`;
+  }
 }
+
+const TomtheInstructor = new Instructor({
+    speciality: "C++"
+})
+
+console.log(TomtheInstructor.correctTests(99));
+
+///Stretch task: 
+
+// * Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
+
+
+
 
 // #### Student
 
@@ -105,9 +123,14 @@ class Student extends Personn {
 
 const studentn1 = new Student({
   name: "jack"
+  
 });
 
 console.log(studentn1.PRAssignmentt("Python"));
+
+console.log(
+    studentn1
+)
 
 // #### Project Manager
 
