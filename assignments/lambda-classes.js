@@ -112,7 +112,7 @@ const studentn1 = new Student ({
     name: "jack"
 })
 
-console.log(studentn1.PRAssignmentt("Javascript"));
+console.log(studentn1.PRAssignmentt("Python"));
 
 // #### Project Manager
 
@@ -128,10 +128,10 @@ console.log(studentn1.PRAssignmentt("Javascript"));
 
 
 class ProjectManagers extends Instructor {
-    constructor(personDetails){
-        super(personDetails)
-        this.gradClassName = personDetails.gradClassName,
-        this.favInstructor = personDetails.favInstructor
+    constructor(personalD){
+        super(personalD)
+        this.gradClassName = personalD.gradClassName,
+        this.favInstructor = personalD.favInstructor
 
     }
 
@@ -161,5 +161,5 @@ const projectMan = new ProjectManagers ({
     favInstructor:"John"
 })
 
-console.log(projectMan.standUp("webeu3"))
+console.log(projectMan.standUp("webeu4"))
 console.log(projectMan.debugsCode({name: "Abdel"},"equations"))
