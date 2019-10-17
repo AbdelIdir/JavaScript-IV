@@ -67,24 +67,19 @@ class Instructor extends Personn {
     return ` ${student.name} receives a perfect score on ${subject}`;
   }
 
-  correctTests(grade){
-      const studentGrade = Math.floor(Math.random()*grade+1)
-      return `Student grade is ${studentGrade}`;
+  correctTests(grade) {
+    const studentGrade = Math.floor(Math.random() * grade + 1);
+    return `Student grade is ${studentGrade}`;
   }
 }
 
 const TomtheInstructor = new Instructor({
-    speciality: "C++"
-})
+  speciality: "C++"
+});
 
-console.log(TomtheInstructor.correctTests(99));
-
-///Stretch task: 
+///Stretch task:
 
 // * Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
-
-
-
 
 // #### Student
 
@@ -105,7 +100,7 @@ class Student extends Personn {
     (this.previousBackground = personDetails.previousBackground),
       (this.classname = personDetails.classname),
       (this.favSubjects = personDetails.favSubjects),
-      (this.grade = 99);
+      (this.grade = Math.random() * 100);
   }
 
   listsSubjects() {
@@ -119,18 +114,29 @@ class Student extends Personn {
   sprintChallenge(subject) {
     return console.log(`${this.name} has begun sprint challenge on ${subject}`);
   }
+
+  graduate() {
+    if (this.grade >= 70) {
+      return `Congratulations ! You graduated from Lambda School with a ${Math.floor(this.grade)} overall`;
+    }
+    return "the score is too low to graduate "
+  }
 }
 
 const studentn1 = new Student({
-  name: "jack"
-  
+  name: "ralph"
 });
+
+console.log(studentn1);
+console.log(TomtheInstructor.correctTests(studentn1.grade));
+console.log(studentn1.graduate())
+// * Add a graduate method to a student.
+//   * This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
+//   * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 
 console.log(studentn1.PRAssignmentt("Python"));
 
-console.log(
-    studentn1
-)
+console.log(studentn1);
 
 // #### Project Manager
 
